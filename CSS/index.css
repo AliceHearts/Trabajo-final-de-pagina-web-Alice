@@ -1,0 +1,106 @@
+:root{
+  --neon:#7c3aed;   /* morado */
+  --bg:#0b1020;     /* fondo */
+  --text:#e5e7eb;   /* texto */
+}
+
+/* base */
+body{ 
+    background:var(--bg); 
+    color:var(--text); 
+}
+.arcoirisSubmarino{ 
+    background:var(--neon);
+}
+.cuevaMenu .nav-link{ 
+    color:#e9e9ff; 
+}
+.cuevaMenu .nav-link:hover{
+   color:#fff; 
+}
+
+/* subrayado “página actual” en Inicio */
+.page-inicio .linkCosmico[href="index.html"]{
+   position:relative; 
+}
+.page-inicio .linkCosmico[href="index.html"]::after{
+  content:"";
+  position:absolute; 
+  left:0; bottom:-6px; 
+  width:100%; 
+  height:3px;
+  background:#fff; 
+  border-radius:2px; 
+  opacity:.85;
+}
+
+/* hamburguesa (lo abre/cierra JS) */
+.botonHamburguesa{ 
+  border:none; 
+}
+.botonHamburguesa:focus{ 
+  box-shadow:none; 
+}
+
+/* carrusel */
+.portalMimoso{ 
+  position:relative; 
+}
+.fotoHeroe{ 
+  height:55vh; 
+  object-fit:cover; 
+}
+.flechaAtras, .flechaAdelante{
+   filter: drop-shadow(0 0 4px rgba(0,0,0,.6)); 
+  }
+
+/* cards */
+.tarjetaNeon{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(124,58,237,.35);
+  backdrop-filter: blur(3px);
+}
+img{
+  width: auto;
+  height: auto;
+  display: flex;
+}
+.botonEstrella{
+     border:1px solid var(--neon); 
+     color:#fff;
+}
+.botonEstrella:hover{ 
+    background:var(--neon); 
+    color:#fff; 
+}
+
+/* footer */
+.oceanoNocturno{
+   background:#111428; 
+  }
+.enlaceClaro{ 
+  color:#cfd2ff; 
+  text-decoration:none; 
+}
+.enlaceClaro:hover{ 
+  color:#fff; 
+}
+
+/* iconos sociales */
+.iconito{
+  width:36px; 
+  height:36px; 
+  object-fit:contain; 
+  display:block;
+  filter: drop-shadow(0 0 3px rgba(124,58,237,.45));
+}
+
+/* utilidades de accesibilidad */
+.textoInvisible{
+  position:absolute; 
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  clip: rect(0 0 0 0); 
+  white-space:nowrap;
+}

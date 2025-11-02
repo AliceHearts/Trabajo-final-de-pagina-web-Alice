@@ -1,0 +1,145 @@
+:root{
+  --neon:#7c3aed;
+  --bg:#0b1020;
+  --text:#e5e7eb;
+  --tile:#141a33;
+}
+
+/* base + navbar/footer coherentes */
+body{ 
+  background:var(--bg); 
+  color:var(--text); 
+}
+.arcoirisSubmarino{ 
+  background:var(--neon); 
+}
+.cuevaMenu .nav-link{ 
+  color:#e9e9ff; 
+}
+.cuevaMenu .nav-link:hover{ 
+  color:#fff; 
+}
+
+/* subrayado “página actual” */
+.page-contacto .linkCosmico[href="contacto.html"]{ 
+  position:relative; 
+}
+.page-contacto .linkCosmico[href="contacto.html"]::after{
+  content:""; 
+  position:absolute; 
+  left:0; 
+  bottom:-6px; 
+  width:100%; 
+  height:3px;
+  background:#fff; 
+  border-radius:2px; 
+  opacity:.85;
+}
+
+/* carrusel */
+.portalMimoso{ 
+  position:relative; 
+}
+.fotoHeroe{ 
+  height:45vh; 
+  object-fit:cover; 
+}
+.flechaAtras, .flechaAdelante{ 
+  filter: drop-shadow(0 0 4px rgba(0,0,0,.6)); 
+}
+
+/* formulario */
+.zonaContacto .form-label{ 
+  color:#fff; 
+}
+.campoNebulosa{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(124,58,237,.35);
+  color:#fff;
+}
+.campoNebulosa:focus{
+  background:rgba(255,255,255,.05);
+  border-color: var(--neon);
+  box-shadow: 0 0 0 .25rem rgba(124,58,237,.25);
+  color:#fff;
+}
+.botonEstrella{ 
+  border:1px solid var(--neon); 
+  color:#fff; 
+}
+.botonEstrella:hover{ 
+  background:var(--neon); 
+  color:#fff; 
+}
+.botonFantasma{ 
+  border-color:#cfd2ff; 
+  color:#cfd2ff; 
+}
+.botonFantasma:hover{ 
+  background:#cfd2ff; 
+  color:#111; 
+}
+
+/* alerta de errores */
+.alertaGremlin{
+  background:#2b143d;
+  border:1px solid rgba(255,0,122,.45);
+  color:#ffd6f0;
+  padding:.75rem 1rem;
+  border-radius:12px;
+}
+.alertaGremlin.d-none{ 
+  display:none; 
+}
+
+/* validación visual */
+.is-valid{ 
+  border-color:#2dd4bf !important; 
+}
+.is-invalid{ 
+  border-color:#fb7185 !important; 
+}
+
+/* mapa */
+.mapaLimon{
+  width:100%;
+  height: 360px;
+  border-radius:14px;
+  border:1px solid rgba(124,58,237,.35);
+  overflow:hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.pequeñoAviso{ 
+  color:#cfd2ff; 
+  font-size:.85rem; 
+  opacity:.8; 
+}
+
+/* footer */
+.oceanoNocturno{ 
+  background:#111428; 
+}
+.enlaceClaro{ 
+  color:#cfd2ff; 
+  text-decoration:none; 
+}
+.enlaceClaro:hover{ 
+  color:#fff; 
+}
+.iconito{
+  width:36px; 
+  height:36px; 
+  object-fit:contain; 
+  display:block;
+  filter: drop-shadow(0 0 3px rgba(124,58,237,.45));
+}
+
+/* utilidades */
+.textoInvisible{
+  position:absolute; 
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  clip: rect(0 0 0 0); 
+  white-space:nowrap;
+}

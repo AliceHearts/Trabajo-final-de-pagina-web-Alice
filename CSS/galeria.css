@@ -1,0 +1,114 @@
+:root{
+  --neon:#7c3aed;   /* morado principal */
+  --bg:#0b1020;     /* fondo oscuro */
+  --text:#e5e7eb;   /* texto claro */
+  --tile:#141a33;   /* fondo de las piezas */
+}
+
+/* base + navbar/footer (igual que Inicio) */
+body{ background:var(--bg); color:var(--text); }
+.arcoirisSubmarino{ background:var(--neon); }
+.cuevaMenu .nav-link{ color:#e9e9ff; }
+.cuevaMenu .nav-link:hover{ color:#fff; }
+
+/* subrayado “página actual” en Galería */
+.page-galeria .linkCosmico[href="galeria.html"]{ position:relative; }
+.page-galeria .linkCosmico[href="galeria.html"]::after{
+  content:""; position:absolute; left:0; bottom:-6px; width:100%; height:3px;
+  background:#fff; border-radius:2px; opacity:.85;
+}
+
+/* hamburguesa (lo abre/cierra JS) */
+.botonHamburguesa{ border:none; }
+.botonHamburguesa:focus{ box-shadow:none; }
+
+/* título */
+.tituloLuciérnaga{ letter-spacing:.5px; }
+
+/* --- GALERÍA (CSS Grid responsive) --- */
+.mosaicoMagico{
+  display:grid;
+  gap:1rem;
+  /* por defecto (>=992px) 4 columnas */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+img{
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+/* sm: 2 columnas */
+@media (max-width: 575.98px){
+  .mosaicoMagico{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* md: 3 columnas */
+@media (min-width: 576px) and (max-width: 991.98px){
+  .mosaicoMagico{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.piezaMosaico{
+  display:block;
+  text-decoration:none;
+  outline:none;
+}
+
+.marcoHechizo{
+  margin:0;
+  background:var(--tile);
+  position:relative;
+  overflow:hidden;
+  border-radius:14px;
+  border:1px solid rgba(124,58,237,.35);
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+
+.marcoHechizo img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  filter: grayscale(25%);
+  transform: scale(1);
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.susurroFoto{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding:.6rem .75rem;
+  background: linear-gradient(180deg, rgba(10,10,25,0) 0%, rgba(10,10,25,.75) 100%);
+  color:#fff;
+  font-size:.95rem;
+  opacity:.0;
+  transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+/* hover effect */
+.piezaMosaico:hover .marcoHechizo img{
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+.piezaMosaico:hover .susurroFoto{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* keyboard focus visible */
+.piezaMosaico:focus .marcoHechizo,
+.piezaMosaico:focus-visible .marcoHechizo{
+  box-shadow: 0 0 0 3px rgba(124,58,237,.5), 0 6px 18px rgba(0,0,0,.35);
+}
+
+/* footer */
+.oceanoNocturno{ background:#111428; }
+.enlaceClaro{ color:#cfd2ff; text-decoration:none; }
+.enlaceClaro:hover{ color:#fff; }
+
+/* iconos sociales */
+.iconito{
+  width:36px; height:36px; object-fit:contain; display:block;
+  filter: drop-shadow(0 0 3px rgba(124,58,237,.45));
+}
